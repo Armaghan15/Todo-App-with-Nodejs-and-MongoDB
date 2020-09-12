@@ -1,0 +1,18 @@
+{
+  "name": "todo-app-version1",
+  "version": "1.0.0",
+  "description": "This is the first version of my todolist project with nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Armaghan Hayat",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.3"
+  }
+}

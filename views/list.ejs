@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>ToDo List</title>
+</head>
+
+<body>
+    <div class="box" id="heading">
+        <h1> <%= listTitle %> </h1>
+    </div>
+
+    <div class="box">
+        <% tasks.forEach(task => { %>
+        <form action="/deleteTask" method="POST">
+            <div class="item">
+                <input type="checkbox" name="checkbox" value="<%= task._id %>"onChange="this.form.submit()">
+                <p><%= task.title %></p>
+            </div>
+            <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+        </form>
+        <% }); %>
+
+        <form class="item" action="/" method="POST">
+            <input id="task" type="text" name="newTask" placeholder="Create a new Task" autocomplete="off">
+            <button type="submit" name="list" value="<%= listTitle %>">+</button>
+        </form>
+    </div>
+</body>
+
+</html>
